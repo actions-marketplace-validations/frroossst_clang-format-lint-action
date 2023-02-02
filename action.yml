@@ -1,0 +1,15 @@
+name: 'clang fmt lint'
+description: 'lints using the clang-format'
+inputs:
+  file-to-lint: # id of input
+    description: 'file path to lint'
+    required: true
+    default: '.'
+
+runs:
+  using: "composite"
+  steps:
+    - run: export filetolint=${{ inputs.file-to-lint }}
+      shell: bash
+    - run: fmt.sh
+      shell: bash
