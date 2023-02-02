@@ -1,0 +1,12 @@
+name: 'clang-format-lint-action'
+description: 'run clang-format on specified files'
+author: 'frroossst'
+inputs:
+  filePaths:
+    description: 'Files to lint'
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filePaths }}
